@@ -1,0 +1,29 @@
+Install Java(1.8.0_191 or higher)
+
+https://java.com/en/download/help/linux_x64_install.xml
+
+To build:
+./gradlew build
+
+To run:
+./gradlew run -PmyArgs='[arg1, arg2, arg3, arg4, arg5]'
+
+Command line arguments are as follows:
+arg1: Number of threads
+arg2: Number of keys to be inserted
+arg3: Branching Factor
+arg4: Load Factor
+arg5: Concurrency Factor
+arg6: B-tree or B-tree + CHM (0 - for B-tree, 1 - for B-tree + CHM)
+
+Example:
+
+For inserting 1 million keys in B-tree using 8 threads and 128 branching factor with load factor and 
+concurrency factor of CHM being 4 and 0.75 respectively
+
+./gradlew run -PmyArgs='[8,1000000,128, 4, 0.75, 0]'
+
+For inserting 1 million keys in B-tree + CHM using 8 threads and 128 branching factor with load factor and 
+concurrency factor of CHM being 4 and 0.75 respectively
+
+./gradlew run -PmyArgs='[8,1000000,128, 4, 0.75, 1]'
